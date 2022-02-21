@@ -14,35 +14,8 @@
             <div class="header-right">
 
                 <ul>
-                    <li>
-                        <a href="#">home</a>
-                    </li>
-                    <li>
-                        <a href="#" class="active">home</a>
-                    </li>
-                    <li>
-                        <a href="#">home</a>
-                    </li>
-                    <li>
-                        <a href="#">home</a>
-                    </li>
-                    <li>
-                        <a href="#">home</a>
-                    </li>
-                    <li>
-                        <a href="#">home</a>
-                    </li>
-                    <li>
-                        <a href="#">home</a>
-                    </li>
-                    <li>
-                        <a href="#">home</a>
-                    </li>
-                    <li>
-                        <a href="#">home</a>
-                    </li>
-                    <li>
-                        <a href="#">home</a>
+                    <li v-for="(link, index) in links" :key="index">
+                        <a :class=" link.current ? 'active' : ''" :href=link.url>{{link.text}}</a>
                     </li>
                 </ul>
 
@@ -57,6 +30,110 @@
 <script>
 export default {
   name: 'myHeader',
+
+  data(){
+
+      return {
+
+        links: [
+
+            {
+                text: 'characters',
+
+                url: '#',
+
+                current: false
+
+            },
+
+            {
+                text: 'comics',
+
+                url: '#',
+
+                current: true
+
+            },
+
+            {
+                text: 'movies',
+
+                url: '#',
+
+                current: false
+
+            },
+
+            {
+                text: 'tv',
+
+                url: '#',
+
+                current: false
+
+            },
+
+            {
+                text: 'games',
+
+                url: '#',
+
+                current: false
+
+            },
+
+            {
+                text: 'collectibles',
+
+                url: '#',
+
+                current: false
+
+            },
+
+            {
+                text: 'videos',
+
+                url: '#',
+
+                current: false
+
+            },
+
+            {
+                text: 'fans',
+
+                url: '#',
+
+                current: false
+
+            },
+
+            {
+                text: 'news',
+
+                url: '#',
+
+                current: false
+
+            },
+
+            {
+                text: 'shop',
+
+                url: '#',
+
+                current: false
+
+            },
+
+
+        ],
+
+
+      }
+
+  },
   props: {
     msg: String
   }
@@ -111,6 +188,7 @@ export default {
                         a{
                             color: $colorDark;
                             height: 80px;
+                            padding: 0px 15px;
                             display: inline-block;
                             @include my_flex_row;
                             text-decoration: none;
