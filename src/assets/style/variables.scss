@@ -1,0 +1,16 @@
+$colorWhite: #fff;
+$colorDark : #222;
+$colorGrey: #384d5e;
+$colorBlue: #0081f8;
+
+@mixin my_flex_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin my_flex_col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
