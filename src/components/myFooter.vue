@@ -12,7 +12,7 @@
             
             <ul>
               <li class="ft-list-title">{{link.type}}</li>
-              <li v-for="(go, indice) in link.listLinks" :key="indice"><a href="#">{{go}}</a></li>
+              <li v-for="(go, indice) in link.listLinks" :key="indice"><a :href="go.url">{{go.text}}</a></li>
             </ul>
 
           </div>
@@ -80,19 +80,47 @@ export default {
 
           listLinks: [
 
-            'characters',
+            {
+              text:'characters',
 
-            'comics',
+              url: '#'
+            },
 
-            'movies',
+            {
+              text:'comics',
 
-            'tv',
+              url: '#'
+            },
 
-            'games',
+            {
+              text:'movies',
 
-            'videos',
+              url: '#'
+            },
 
-            'news',
+            {
+              text:'tv',
+
+              url: '#'
+            },
+
+            {
+              text:'games',
+
+              url: '#'
+            },
+
+            {
+              text:'videos',
+
+              url: '#'
+            },
+
+            {
+              text:'news',
+
+              url: '#'
+            },
 
           ],
 
@@ -104,9 +132,17 @@ export default {
 
           listLinks: [
 
-            'shop DC',
+            {
+              text:'shop DC',
 
-            'shop DC collectibles',
+              url: '#'
+            },
+
+            {
+              text:'shop Dc collectibles',
+
+              url: '#'
+            },
 
           ],
 
@@ -118,29 +154,77 @@ export default {
 
           listLinks: [
 
-            'terms of use',
+            {
+              text:'terms of use',
 
-            'privacy policy (new)',
+              url: '#'
+            },
 
-            'shop DC',
+            {
+              text:'privacy policy (new)',
 
-            'ad choices',
+              url: '#'
+            },
 
-            'advertising',
+            {
+              text:'shop DC',
 
-            'jobs',
+              url: '#'
+            },
 
-            'subscriptions',
+            {
+              text:'ad choices',
 
-            'talent workshops',
+              url: '#'
+            },
 
-            'CPSC certificates',
+            {
+              text:'advertising',
 
-            'ratings',
+              url: '#'
+            },
 
-            'shop help',
+            {
+              text:'jobs',
 
-            'contact us',
+              url: '#'
+            },
+
+            {
+              text:'subscriptions',
+
+              url: '#'
+            },
+
+            {
+              text:'talent workshops',
+
+              url: '#'
+            },
+
+            {
+              text:'CPSC certificates',
+
+              url: '#'
+            },
+
+            {
+              text:'ratings',
+
+              url: '#'
+            },
+
+            {
+              text:'shop help',
+
+              url: '#'
+            },
+
+            {
+              text:'contact us',
+
+              url: '#'
+            },
 
           ],
 
@@ -152,15 +236,35 @@ export default {
 
           listLinks: [
 
-            'DC',
+            {
+              text:'DC',
 
-            'MAD magazine',
+              url: '#'
+            },
 
-            'DC Kids',
+            {
+              text:'MAD magazine',
 
-            'DC universe',
+              url: '#'
+            },
 
-            'DC power visa',
+            {
+              text:'Dc kids',
+
+              url: '#'
+            },
+
+            {
+              text:'Dc universe',
+
+              url: '#'
+            },
+
+            {
+              text:'cDc power visa',
+
+              url: '#'
+            },
 
           ],
 
@@ -219,6 +323,10 @@ export default {
                   text-decoration: none;
                   font-size: 0.8em;
                   text-transform: capitalize;
+
+                  &:hover{
+                    color: $colorWhite
+                  }
                 }
 
               }
