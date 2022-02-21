@@ -422,14 +422,14 @@ export default {
           text-transform: uppercase;
           color: $colorBlue;
           font-weight: bold;
-          margin: 0px 10px;
+          margin: 0px 30px;
         }
 
         ul{
 
           list-style-type: none;
           @include my_flex_row;
-          gap: 10px;
+          gap: 20px;
 
           li{
             
