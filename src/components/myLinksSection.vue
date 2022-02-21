@@ -3,48 +3,12 @@
 
     <div class="container">
 
-      <a href="#" class="link-card">
+      <a href="#" class="link-card" v-for="(link, index) in links" :key="index">
         <div class="card-img">
-          <img src="../assets/img/buy-comics-digital-comics.png" alt="digital-img">
+          <img :src="link.src" alt="link-img">
         </div>
         <div class="card-txt">
-          <span>digital comics</span>
-        </div>
-      </a>
-
-      <a href="#" class="link-card">
-        <div class="card-img">
-          <img src="../assets/img/buy-comics-merchandise.png" alt="digital-img">
-        </div>
-        <div class="card-txt">
-          <span>dc merchandise</span>
-        </div>
-      </a>
-
-      <a href="#" class="link-card">
-        <div class="card-img">
-          <img src="../assets/img/buy-comics-subscriptions.png" alt="digital-img">
-        </div>
-        <div class="card-txt">
-          <span>subscription</span>
-        </div>
-      </a>
-
-      <a href="#" class="link-card">
-        <div class="card-img">
-          <img src="../assets/img/buy-comics-shop-locator.png" alt="digital-img">
-        </div>
-        <div class="card-txt">
-          <span>comic shop locator</span>
-        </div>
-      </a>
-
-      <a href="#" class="link-card">
-        <div class="card-img">
-          <img src="../assets/img/buy-dc-power-visa.svg" alt="digital-img">
-        </div>
-        <div class="card-txt">
-          <span>dc power visa</span>
+          <span>{{link.text}}</span>
         </div>
       </a>
 
@@ -56,6 +20,59 @@
 <script>
 export default {
   name: 'myLinksSection',
+
+  data(){
+
+    return{
+
+      links : [
+
+        {
+
+          text: 'digital comics',
+
+          src: require('../assets/img/buy-comics-digital-comics.png'),
+
+        },
+
+        {
+
+          text: 'dc merchandise',
+
+          src: require('../assets/img/buy-comics-merchandise.png'),
+
+        },
+
+        {
+
+          text: 'subscription',
+
+          src: require('../assets/img/buy-comics-subscriptions.png'),
+
+        },
+
+        {
+
+          text: 'comic shop locator',
+
+          src: require('../assets/img/buy-comics-shop-locator.png'),
+
+        },
+
+        {
+
+          text: 'dc power visa',
+
+          src: require('../assets/img/buy-dc-power-visa.svg'),
+
+        },
+
+      ],
+
+    }
+
+  },
+
   props: {
     msg: String
   }
