@@ -78,7 +78,6 @@ export default {
             .header-left{
                 width: 30%;
                 @include my_flex_row;
-                justify-content: center;
 
                 .logo{
                     @include my_flex_row;
