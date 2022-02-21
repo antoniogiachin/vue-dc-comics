@@ -41,17 +41,12 @@
           <span>follow us</span>
           <ul>
             
-            <li>
-              <a href="#">
-                <img src="../assets/img/footer-facebook.png" alt="ft-logo">                
+            <li v-for="(social, indici) in socialLinks" :key="indici">
+              <a :href=social.url>
+                <img :src=social.src alt="ft-logo">                
               </a>
             </li>
 
-            <li>
-              <a href="#">
-                <img src="../assets/img/footer-facebook.png" alt="ft-logo">                
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -267,6 +262,45 @@ export default {
             },
 
           ],
+
+        },
+
+      ],
+
+      socialLinks : [
+
+        {
+
+          src : require('../assets/img/footer-facebook.png'),
+          url : '#'
+
+        },
+
+        {
+
+          src : require('../assets/img/footer-twitter.png'),
+          url : '#'
+
+        },
+
+        {
+
+          src : require('../assets/img/footer-youtube.png'),
+          url : '#'
+
+        },
+
+        {
+
+          src : require('../assets/img/footer-pinterest.png'),
+          url : '#'
+
+        },
+
+        {
+
+          src : require('../assets/img/footer-periscope.png'),
+          url : '#'
 
         },
 
