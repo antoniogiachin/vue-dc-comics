@@ -8,24 +8,13 @@
 
         <div class="ft-top-left">
 
-          <div class="col">
+          <div class="col" v-for ="(link, index) in ftLinks" :key="index">
             
             <ul>
-              <li class="ft-list-title">dc comics</li>
-              <li><a href="#">home</a></li>
-              <li><a href="#">home</a></li>
-              <li><a href="#">home</a></li>
-              <li><a href="#">home</a></li>
-              <li><a href="#">home</a></li>
-              <li><a href="#">home</a></li>
-              <li><a href="#">home</a></li>
+              <li class="ft-list-title">{{link.type}}</li>
+              <li v-for="(go, indice) in link.listLinks" :key="indice"><a href="#">{{go}}</a></li>
             </ul>
 
-            <ul>
-              <li class="ft-list-title">shop</li>
-              <li><a href="#">home</a></li>
-              <li><a href="#">home</a></li>
-            </ul>
           </div>
 
         </div>
@@ -78,6 +67,111 @@
 <script>
 export default {
   name: 'myFooter',
+
+  data(){
+
+    return {
+
+      ftLinks: [
+
+        {
+
+          type: 'dc comics',
+
+          listLinks: [
+
+            'characters',
+
+            'comics',
+
+            'movies',
+
+            'tv',
+
+            'games',
+
+            'videos',
+
+            'news',
+
+          ],
+
+        },
+
+        {
+
+          type: 'shop',
+
+          listLinks: [
+
+            'shop DC',
+
+            'shop DC collectibles',
+
+          ],
+
+        },
+
+        {
+
+          type: 'dc',
+
+          listLinks: [
+
+            'terms of use',
+
+            'privacy policy (new)',
+
+            'shop DC',
+
+            'ad choices',
+
+            'advertising',
+
+            'jobs',
+
+            'subscriptions',
+
+            'talent workshops',
+
+            'CPSC certificates',
+
+            'ratings',
+
+            'shop help',
+
+            'contact us',
+
+          ],
+
+        },
+
+        {
+
+          type: 'sites',
+
+          listLinks: [
+
+            'DC',
+
+            'MAD magazine',
+
+            'DC Kids',
+
+            'DC universe',
+
+            'DC power visa',
+
+          ],
+
+        },
+
+      ],
+
+    }
+
+  },
+
   props: {
     msg: String
   }
@@ -104,6 +198,8 @@ export default {
         .ft-top-left{
           width: 50%;
           height: 100%;
+          @include my_flex_col;
+          flex-wrap: wrap;
 
           .col{
 
