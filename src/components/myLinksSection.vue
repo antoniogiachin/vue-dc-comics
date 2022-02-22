@@ -4,14 +4,6 @@
     <div class="container">
 
       <myLinkCard v-for="(link, index) in links" :key="index" :href="link.href" :src="link.src" :text="link.text"/>
-      <!-- <a :href="link.href" class="link-card" v-for="(link, index) in links" :key="index">
-        <div class="card-img">
-          <img :src="link.src" alt="link-img">
-        </div>
-        <div class="card-txt">
-          <span>{{link.text}}</span>
-        </div>
-      </a> -->
 
     </div>
 
@@ -107,28 +99,6 @@ export default {
         height: 120px;
         @include my_flex_row;
         justify-content: space-around;
-
-        // .link-card{
-        //   @include my_flex_row;
-        //   gap: 20px;
-        //   text-transform: uppercase;
-        //   color: $colorWhite;
-        //   font-size: 0.8em;
-        //   text-decoration: none;
-        
-        //   .card-img{
-        //     width: 50px;
-        //     height: 50px;
-
-        //     img{
-        //       width: 100%;
-        //       height: 100%;
-        //       object-fit: contain;
-        //     }
-        //   }
-
-        // }
-
       }
 
     }
