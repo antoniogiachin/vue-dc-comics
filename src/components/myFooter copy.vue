@@ -7,14 +7,15 @@
       <div class="container">
 
         <div class="ft-top-left">
-         
-          <menuFooter title="dc comics" :items="menuComics"/>
 
-          <menuFooter title="shop" :items="menuShop"/>
+          <div class="col" v-for ="(link, index) in ftLinks" :key="index">
+            
+            <ul>
+              <li class="ft-list-title">{{link.type}}</li>
+              <li v-for="(go, indice) in link.listLinks" :key="indice"><a :href="go.url">{{go.text}}</a></li>
+            </ul>
 
-          <menuFooter title="dc" :items="menuDC"/>
-
-          <menuFooter title="sites" :items="menuSites"/>
+          </div>
 
         </div>
 
@@ -59,203 +60,208 @@
 </template>
 
 <script>
-import menuFooter from './partials/menuFooter.vue'
-
 export default {
   name: 'myFooter',
-
-  components: {
-    menuFooter,
-  },
 
   data(){
 
     return {
 
-      menuComics: [
+      ftLinks: [
 
         {
-          text: 'Characters',
 
-          url: '#'
+          type: 'dc comics',
+
+          listLinks: [
+
+            {
+              text:'characters',
+
+              url: '#'
+            },
+
+            {
+              text:'comics',
+
+              url: '#'
+            },
+
+            {
+              text:'movies',
+
+              url: '#'
+            },
+
+            {
+              text:'tv',
+
+              url: '#'
+            },
+
+            {
+              text:'games',
+
+              url: '#'
+            },
+
+            {
+              text:'videos',
+
+              url: '#'
+            },
+
+            {
+              text:'news',
+
+              url: '#'
+            },
+
+          ],
 
         },
 
         {
-          text: 'Comics',
 
-          url: '#'
+          type: 'shop',
 
-        },
+          listLinks: [
 
-        {
-          text: 'movies',
+            {
+              text:'shop DC',
 
-          url: '#'
+              url: '#'
+            },
 
-        },
+            {
+              text:'shop Dc collectibles',
 
-        {
-          text: 'tv',
+              url: '#'
+            },
 
-          url: '#'
-
-        },
-
-        {
-          text: 'games',
-
-          url: '#'
+          ],
 
         },
 
         {
-          text: 'videos',
 
-          url: '#'
+          type: 'dc',
 
-        },
+          listLinks: [
 
-        {
-          text: 'news',
+            {
+              text:'terms of use',
 
-          url: '#'
+              url: '#'
+            },
 
-        },
-      ],  
+            {
+              text:'privacy policy (new)',
 
-      menuShop: [
+              url: '#'
+            },
 
-        {
-          text : 'shop DC',
+            {
+              text:'shop DC',
 
-          url: '#'
+              url: '#'
+            },
 
-        },
+            {
+              text:'ad choices',
 
-        {
-          text : 'shop DC colectibles',
+              url: '#'
+            },
 
-          url: '#'
+            {
+              text:'advertising',
 
-        },
-      ],
+              url: '#'
+            },
 
-      menuDC: [
+            {
+              text:'jobs',
 
-        {
-          text: 'terms of use',
+              url: '#'
+            },
 
-          url: '#'
+            {
+              text:'subscriptions',
 
-        },
+              url: '#'
+            },
 
-        {
-          text: 'privacy policy (new)',
+            {
+              text:'talent workshops',
 
-          url: '#'
+              url: '#'
+            },
 
-        },
+            {
+              text:'CPSC certificates',
 
-        {
-          text: 'ad choices',
+              url: '#'
+            },
 
-          url: '#'
+            {
+              text:'ratings',
 
-        },
+              url: '#'
+            },
 
-        {
-          text: 'advertising',
+            {
+              text:'shop help',
 
-          url: '#'
+              url: '#'
+            },
 
-        },
+            {
+              text:'contact us',
 
-        {
-          text: 'jobs',
+              url: '#'
+            },
 
-          url: '#'
-
-        },
-
-        {
-          text: 'sucscriptions',
-
-          url: '#'
-
-        },
-
-        {
-          text: 'talent workshops',
-
-          url: '#'
-
-        },
-
-        {
-          text: 'CPSC certificates',
-
-          url: '#'
+          ],
 
         },
 
         {
-          text: 'ratings',
 
-          url: '#'
+          type: 'sites',
 
-        },
+          listLinks: [
 
-        {
-          text: 'shop help',
+            {
+              text:'DC',
 
-          url: '#'
+              url: '#'
+            },
 
-        },
+            {
+              text:'MAD magazine',
 
-        {
-          text: 'contact us',
+              url: '#'
+            },
 
-          url: '#'
+            {
+              text:'Dc kids',
 
-        },
+              url: '#'
+            },
 
-      ], 
+            {
+              text:'Dc universe',
 
-      menuSites : [
+              url: '#'
+            },
 
-        {
-          text: 'CDC',
+            {
+              text:'cDc power visa',
 
-          url: '#'
+              url: '#'
+            },
 
-        },
-
-        {
-          text: 'MAD magazine',
-
-          url: '#'
-
-        },
-
-        {
-          text: 'DC kids',
-
-          url: '#'
-
-        },
-
-        {
-          text: 'DC universe',
-
-          url: '#'
-
-        },
-
-        {
-          text: 'DC power visa',
-
-          url: '#'
+          ],
 
         },
 
@@ -332,6 +338,36 @@ export default {
           height: 100%;
           @include my_flex_col;
           flex-wrap: wrap;
+
+          .col{
+
+            ul{
+              list-style-type: none;
+
+              .ft-list-title{
+                color: $colorWhite;
+                text-transform: uppercase;
+                font-weight: bold;
+                margin: 10px 0px;
+              }
+
+              li{
+
+                a{
+                  color: $colorLightGrey;
+                  text-decoration: none;
+                  font-size: 0.8em;
+                  text-transform: capitalize;
+
+                  &:hover{
+                    color: $colorWhite
+                  }
+                }
+
+              }
+            }
+          }
+
         }
 
         .ft-top-right{
