@@ -353,7 +353,7 @@ export default {
               li{
 
                 a{
-                  color: $colorGrey;
+                  color: $colorLightGrey;
                   text-decoration: none;
                   font-size: 0.8em;
                   text-transform: capitalize;
