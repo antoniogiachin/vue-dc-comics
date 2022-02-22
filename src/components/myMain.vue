@@ -10,16 +10,8 @@
 
       <div class="current-series"><span>current series</span></div>
 
-      <div class="main-card" v-for="(serie, index) in currentSeries" :key="index">
-        <div class="card-img">
-          <img :src="serie.thumb" alt="main-card-img">
-        </div>
-        <div class="card-text">
-          <span>{{serie.series}}</span>
-        </div>
-      </div>
-
-
+      <mainCard v-for="(serie, index) in currentSeries" :key="index" :series="serie.series" :thumbs="serie.thumb"/>
+      
       <button class="load-more">Load More</button>
       
     </div>
@@ -27,8 +19,15 @@
 </template>
 
 <script>
+import mainCard from './partials/mainCard.vue'
+
 export default {
   name: 'myMain',
+
+  components: {
+    mainCard,
+  },
+
   data(){
 
     return {
@@ -161,30 +160,6 @@ export default {
           padding: 5px 20px;
           font-size: 1.2em;
           font-weight: bold;
-        }
-
-        .main-card{
-          width: calc(100% / 6 - 20px);
-          margin: 0px 10px 30px 10px;
-
-          .card-img{
-            width: 150px;
-            height: 150px;
-            margin-bottom: 10px;
-
-            img{
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: top;
-            }
-          }
-
-          .card-text{
-            text-transform: uppercase;
-            font-size: 0.7em;
-            padding: 0px 2px;
-          }
         }
 
         .load-more{

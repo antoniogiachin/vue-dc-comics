@@ -3,11 +3,11 @@
   <div class="main-card" >
 
         <div class="card-img">
-          <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="main-card-img">
+          <img :src="thumbs">
         </div>
-        
+
         <div class="card-text">
-          <span>action comics</span>
+          <span>{{series}}</span>
         </div>
 
     </div>
@@ -16,11 +16,43 @@
 
 <script>
 export default {
-    name: 'mainCard'
+    name: 'mainCard',
+
+    props: {
+
+        "series": String,
+
+        "thumbs": String
+
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-    @import "../assets/style/variables.scss";
+    @import "../../assets/style/variables.scss";
+
+    .main-card{
+        width: calc(100% / 6 - 20px);
+        margin: 0px 10px 30px 10px;
+
+        .card-img{
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
+
+        .card-text{
+        text-transform: uppercase;
+        font-size: 0.7em;
+        padding: 0px 2px;
+        }
+    }
 
 </style>
