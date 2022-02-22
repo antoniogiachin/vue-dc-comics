@@ -348,7 +348,7 @@ export default {
                 color: $colorWhite;
                 text-transform: uppercase;
                 font-weight: bold;
-                margin: 15px 0px;
+                margin: 10px 0px;
               }
 
               li{
@@ -431,13 +431,6 @@ export default {
           list-style-type: none;
           @include my_flex_row;
           gap: 20px;
-
-          li{
-            
-            a{
-              
-            }
-          }
 
         }
 
