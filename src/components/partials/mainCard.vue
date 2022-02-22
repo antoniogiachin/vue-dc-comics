@@ -33,11 +33,12 @@ export default {
 
     .main-card{
         width: calc(100% / 6 - 20px);
-        margin: 0px 10px 30px 10px;
+        height: 150px;
+        margin:  10px;
 
         .card-img{
-        width: 150px;
-        height: 150px;
+        width: 100%;
+        height: 70%;
         margin-bottom: 10px;
 
             img{

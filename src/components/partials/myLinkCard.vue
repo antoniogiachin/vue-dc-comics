@@ -37,8 +37,8 @@ export default {
         text-decoration: none;
     
         .card-img{
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
 
         img{
             width: 100%;
