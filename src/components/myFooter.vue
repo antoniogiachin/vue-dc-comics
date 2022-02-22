@@ -347,6 +347,7 @@ export default {
               .ft-list-title{
                 color: $colorWhite;
                 text-transform: uppercase;
+                font-weight: bold;
                 margin: 15px 0px;
               }
 
