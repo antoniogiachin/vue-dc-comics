@@ -37,16 +37,11 @@
         </div>
 
         <div class="ft-social">
-          <span>follow us</span>
-          <ul>
-            
-            <li v-for="(social, indici) in socialLinks" :key="indici">
-              <a :href=social.url>
-                <img :src=social.src alt="ft-logo">                
-              </a>
-            </li>
 
-          </ul>
+          <span>follow us</span>
+          
+          <socialList :links="socialLinks"/>
+
         </div>
 
 
@@ -60,12 +55,15 @@
 
 <script>
 import menuFooter from './partials/menuFooter.vue'
+import socialList from './partials/socialList.vue'
+
 
 export default {
   name: 'myFooter',
 
   components: {
     menuFooter,
+    socialList,
   },
 
   data(){
@@ -382,20 +380,13 @@ export default {
 
         width: 50%;
         @include my_flex_row;
+        justify-content: flex-end;
 
         span{
           text-transform: uppercase;
           color: $colorBlue;
           font-weight: bold;
           margin: 0px 30px;
-        }
-
-        ul{
-
-          list-style-type: none;
-          @include my_flex_row;
-          gap: 20px;
-
         }
 
       }

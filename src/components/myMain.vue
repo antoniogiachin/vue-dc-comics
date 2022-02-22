@@ -133,7 +133,6 @@ export default {
     main{
       background-color: $colorDark;
       color : $colorWhite;
-      font-weight: bold;
 
       #jumbotron{
         min-height: 350px;

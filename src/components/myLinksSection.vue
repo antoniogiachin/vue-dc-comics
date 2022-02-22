@@ -98,7 +98,7 @@ export default {
       .container{
         height: 120px;
         @include my_flex_row;
-        justify-content: space-around;
+        justify-content: space-between;
       }
 
     }
