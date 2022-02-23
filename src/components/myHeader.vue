@@ -145,20 +145,16 @@ export default {
     @import "../assets/style/variables.scss";
 
     header{
-        height: 80px;
-        @include my_flex_row;
         .container{
-            height: 100%;
             @include my_flex_row;
             justify-content: space-between;
+            gap: 10px;
 
             .header-left{
-                width: 30%;
+                height: 80px;
                 @include my_flex_row;
 
                 .logo{
-                    @include my_flex_row;
-                    justify-content: center;
                     width: 60px;
                     height: 60px;
 
@@ -173,8 +169,7 @@ export default {
 
             .header-right{
                 text-transform: uppercase;
-                height: 100%;
-                width: 50%;
+                height: 80px;
 
                 ul{
                     list-style-type: none;
@@ -184,13 +179,14 @@ export default {
 
                     li{
                         margin: 0px 10px;
+                        height: 100%;
+                        line-height: 80px;
 
                         a{
                             color: $colorDark;
-                            height: 80px;
-                            padding: 0px 15px;
+                            height: 100%;
+                            padding: 0px 5px;
                             display: inline-block;
-                            @include my_flex_row;
                             text-decoration: none;
                             font-size: 0.8em;
                             border-bottom: 5px solid transparent;
