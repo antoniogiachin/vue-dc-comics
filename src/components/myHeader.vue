@@ -178,14 +178,14 @@ export default {
                     justify-content: space-around;
 
                     li{
-                        margin: 0px 10px;
+                        margin: 0px 2px;
                         height: 100%;
                         line-height: 80px;
 
                         a{
                             color: $colorDark;
                             height: 100%;
-                            padding: 0px 5px;
+                            padding: 0px 8px;
                             display: inline-block;
                             text-decoration: none;
                             font-size: 0.8em;
